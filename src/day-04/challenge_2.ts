@@ -1,4 +1,4 @@
-import { readInput, readInputAsNumbers } from "../helpers/input";
+import { readInput } from "../helpers/input";
 import { Board } from "./Board";
 
 const inputFile = `${__dirname}/input.txt`;

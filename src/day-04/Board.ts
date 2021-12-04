@@ -59,11 +59,10 @@ export class Board {
         let board: number[][] = []
         const boards: Board[] = [];
         for (const line of input) {
-
-            if (line.length === 15) { // Board numbers
+            if (line.length === 14) { // Board numbers
                 const numbers = line.split(" ").map((n) => parseInt(n, 10)).filter((n) => !isNaN(n));
                 board.push(numbers);
-            } else if (line.length === 1) { // Board break
+            } else if (line.length === 0) { // Board break
                 x = 0;
                 y = 0;
                 if (board.length > 0) {
