@@ -1,6 +1,6 @@
 import { readInputAsNumbers } from "../helpers/input";
 
-const inputFile = `${__dirname}/input.txt`;
+const inputFile = `${__dirname}/../../inputs/day-01.txt`;
 
 export const solve = () => {
     const input = readInputAsNumbers(inputFile);

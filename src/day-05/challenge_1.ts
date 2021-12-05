@@ -1,7 +1,7 @@
 import { readInput } from "../helpers/input";
 import { calculateOverlaps, parsePipes } from "./utils";
 
-const inputFile = `${__dirname}/input.txt`;
+const inputFile = `${__dirname}/../../inputs/day-05.txt`;
 
 const solve = () => {
     const input = readInput(inputFile).filter((s) => s.length > 1);

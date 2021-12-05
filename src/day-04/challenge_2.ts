@@ -1,7 +1,7 @@
 import { readInput } from "../helpers/input";
 import { Board } from "./Board";
 
-const inputFile = `${__dirname}/input.txt`;
+const inputFile = `${__dirname}/../../inputs/day-04.txt`;
 
 const solve = () => {
     const input = readInput(inputFile);
