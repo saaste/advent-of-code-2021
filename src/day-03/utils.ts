@@ -12,7 +12,7 @@ export const initializeBitCounter = (report: string[]): Bit[] =>
 export const countBits = (report: string[]): Bit[] => {
     const bits = initializeBitCounter(report);
     report.forEach((number) => {
-        number.split("").forEach((char, index) => {
+        number.trim().split("").forEach((char, index) => {
             if (char === "0") {
                 bits[index].zeros++;
             } else {
