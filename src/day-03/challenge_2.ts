@@ -1,7 +1,7 @@
 import { readInput } from "../helpers/input";
 import { findReportValue } from "./utils";
 
-const inputFile = `${__dirname}/input.txt`;
+const inputFile = `${__dirname}/../../inputs/day-03.txt`;
 
 const solve = () => {
     let report = readInput(inputFile);

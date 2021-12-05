@@ -1,9 +1,7 @@
 import { readInput } from "../helpers/input";
 import { Bit, countBits } from "./utils";
 
-const inputFile = `${__dirname}/input.txt`;
-
-
+const inputFile = `${__dirname}/../../inputs/day-03.txt`;
 
 const solve = () => {
     const report = readInput(inputFile);
