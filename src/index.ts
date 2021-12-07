@@ -10,6 +10,8 @@ import day5_1 from './day-05/challenge_1';
 import day5_2 from './day-05/challenge_2';
 import day6_1 from './day-06/challenge_1';
 import day6_2 from './day-06/challenge_2';
+import day7_1 from './day-07/challenge_1';
+import day7_2 from './day-07/challenge_2';
 
 console.log(`Day 1 / Step 1: ${day1_1()} increases`);
 console.log(`Day 1 / Step 2: ${day1_2()} increases`);
@@ -23,3 +25,5 @@ console.log(`Day 5 / Step 1: ${day5_1()} overlaps`);
 console.log(`Day 5 / Step 2: ${day5_2()} overlaps`);
 console.log(`Day 6 / Step 1: ${day6_1()} fish`);
 console.log(`Day 6 / Step 2: ${day6_2()} fish`);
+console.log(`Day 7 / Step 1: ${day7_1()}`);
+console.log(`Day 7 / Step 2: ${day7_2()}`);
