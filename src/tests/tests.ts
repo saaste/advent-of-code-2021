@@ -12,6 +12,8 @@ import day5_1 from '../day-05/challenge_1';
 import day5_2 from '../day-05/challenge_2';
 import day6_1 from '../day-06/challenge_1';
 import day6_2 from '../day-06/challenge_2';
+import day7_1 from '../day-07/challenge_1';
+import day7_2 from '../day-07/challenge_2';
 
 describe("Day1", () => {
     it("Challenge 1", () => {
@@ -64,5 +66,14 @@ describe("Day6", () => {
     });
     it("Challenge 2", () => {
         assert.strictEqual(day6_2(), 1765974267455);
+    });
+});
+
+describe("Day7", () => {
+    it("Challenge 1", () => {
+        assert.strictEqual(day7_1(), 354129);
+    });
+    it("Challenge 2", () => {
+        assert.strictEqual(day7_2(), 98905973);
     });
 });
