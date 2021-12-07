@@ -1,14 +1,7 @@
 import { readInputAsString } from "../helpers/input";
+import { median } from "./utils";
 
 const inputFile = `${__dirname}/../../inputs/day-07.txt`;
-
-const median = (numbers: number[]): number => {
-    numbers.sort((a, b) => a - b);
-    const half = Math.floor(numbers.length / 2);
-    if (numbers.length % 2) return numbers[half];
-
-    return (numbers[half - 1] + numbers[half]) / 2.0;
-}
 
 const solve = () => {
     const input = readInputAsString(inputFile).split(",").map((n) => parseInt(n, 10));
