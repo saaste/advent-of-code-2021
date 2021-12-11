@@ -7,7 +7,7 @@
     "start:dev": "nodemon --inspect index.ts",
     "build": "rimraf ./build && tsc",
     "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'src/tests/**/*.ts'",
-    "test:watch": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'src/tests/**/*.ts' --watch --watch-files 'src/**/*.ts",
+    "test:watch": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'src/tests/**/*.ts' --watch --watch-files 'src/**/*.ts'",
     "test:win": "node ./node_modules/mocha/bin/mocha -r ts-node/register 'src/tests/**/*.ts'",
     "test:win:watch": "node ./node_modules/mocha/bin/mocha -r ts-node/register 'src/tests/**/*.ts' --watch --watch-files 'src/**/*.ts'"
   },
