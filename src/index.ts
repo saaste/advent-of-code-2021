@@ -47,5 +47,6 @@ console.log(`Day 10 / Step 2: ${day10_2()}`);
 console.log(`Day 11 / Step 1: ${day11_1()}`);
 console.log(`Day 11 / Step 2: ${day11_2()}`);
 console.log(`Day 12 / Step 1: ${day12_1()}`);
-console.log(`Day 12 / Step 2: ${day12_2()}`);
+// TODO: Enable if you figure out a better performing solution
+//console.log(`Day 12 / Step 2: ${day12_2()}`);
 
