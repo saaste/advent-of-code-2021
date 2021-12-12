@@ -20,6 +20,8 @@ import day10_1 from './day-10/challenge_1';
 import day10_2 from './day-10/challenge_2';
 import day11_1 from './day-11/challenge_1';
 import day11_2 from './day-11/challenge_2';
+import day12_1 from './day-12/challenge_1';
+import day12_2 from './day-12/challenge_2';
 
 
 console.log(`Day 1 / Step 1: ${day1_1()} increases`);
@@ -44,4 +46,7 @@ console.log(`Day 10 / Step 1: ${day10_1()}`);
 console.log(`Day 10 / Step 2: ${day10_2()}`);
 console.log(`Day 11 / Step 1: ${day11_1()}`);
 console.log(`Day 11 / Step 2: ${day11_2()}`);
+console.log(`Day 12 / Step 1: ${day12_1()}`);
+// TODO: Enable if you figure out a better performing solution
+//console.log(`Day 12 / Step 2: ${day12_2()}`);
 
