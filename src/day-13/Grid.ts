@@ -1,7 +1,5 @@
 export class Grid {
     private points: number[][];
-    private width: number = 0;
-    private height: number = 0;
 
     constructor(input: string[]) {
         const points: number[][] = [];
@@ -15,12 +13,14 @@ export class Grid {
             points[y][x]++;
         }
         this.points = points;
-        this.updateWidthAndHeight();
-        
+
+        const height = this.points.length;
+        const width = Math.max(...this.points.map((row) => row.length).filter((number) => !isNaN(number)));
+       
         // Fill with zeroes
-        for (let y = 0; y < this.height; y++) {
+        for (let y = 0; y < height; y++) {
             if (this.points[y] === undefined) points[y] = [];
-            for (let x = 0; x < this.width; x++) {
+            for (let x = 0; x < width; x++) {
                 if (!this.getPointValue(x, y)) {
                     this.points[y][x] = 0;
                 }
@@ -43,7 +43,6 @@ export class Grid {
             }
         }
         this.points = points;
-        this.updateWidthAndHeight();
     }
 
     foldLeftFrom(col: number) {
@@ -70,7 +69,6 @@ export class Grid {
             }
         }
         this.points = points;
-        this.updateWidthAndHeight()
     }
 
     dotsVisible(): number {
@@ -81,21 +79,6 @@ export class Grid {
             }
         }
         return visible;
-    }
-
-    print() {
-        
-        for (const row of this.points) {
-            let rowPrint = "";
-            for (const value of row) {
-                if (value === 0) {
-                    rowPrint += ".";
-                } else {
-                    rowPrint += "#"
-                }
-            }
-            console.log(rowPrint);
-        }
     }
 
     toString(): string {
@@ -113,11 +96,6 @@ export class Grid {
         }
 
         return output;
-    }
-
-    private updateWidthAndHeight() {
-        this.height = this.points.length;
-        this.width = Math.max(...this.points.map((row) => row.length).filter((number) => !isNaN(number)));
     }
 
     private getPointValue(x:number, y:number, grid: number[][] = this.points): number {
