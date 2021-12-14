@@ -24,6 +24,8 @@ import day12_1 from './day-12/challenge_1';
 import day12_2 from './day-12/challenge_2';
 import day13_1 from './day-13/challenge_1';
 import day13_2 from './day-13/challenge_2';
+import day14_1 from './day-14/challenge_1';
+import day14_2 from './day-14/challenge_2';
 
 
 console.log(`Day 1 / Step 1: ${day1_1()} increases`);
@@ -53,3 +55,5 @@ console.log(`Day 12 / Step 1: ${day12_1()}`);
 //console.log(`Day 12 / Step 2: ${day12_2()}`);
 console.log(`Day 13 / Step 1: ${day13_1()}`);
 console.log(`Day 13 / Step 2:\n${day13_2()}`);
+console.log(`Day 14 / Step 1: ${day14_1()}`);
+console.log(`Day 14 / Step 2: ${day14_2()}`);

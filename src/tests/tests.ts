@@ -26,7 +26,8 @@ import day12_1 from '../day-12/challenge_1';
 import day12_2 from '../day-12/challenge_2';
 import day13_1 from '../day-13/challenge_1';
 import day13_2 from '../day-13/challenge_2';
-
+import day14_1 from '../day-14/challenge_1';
+import day14_2 from '../day-14/challenge_2';
 
 describe("Day1", () => {
     it("Challenge 1", () => {
@@ -145,5 +146,14 @@ describe("Day13", () => {
         const output = day13_2().replace(/(?:\r\n|\r|\n)/g, '');
         assert.strictEqual(output,
         `####.####...##.#..#.####.#....###..#....#....#.......#.#.#.....#.#....#..#.#....###..###.....#.##.....#..#....###..#....#....#.......#.#.#...#...#....#..#.#....#....#....#..#.#.#..#....#....#..#.#....####.#.....##..#..#.####.####.###..####.`);
+    });
+});
+
+describe("Day14", () => {
+    it("Challenge 1", () => {
+        assert.strictEqual(day14_1(), 3697);
+    });
+    it("Challenge 2", () => {
+        assert.strictEqual(day14_2(), 4371307836157);
     });
 });
