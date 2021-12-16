@@ -1,6 +1,6 @@
 import { readInput } from "../helpers/input";
-import { EdgeVertexGrid } from "./EdgeVertexGrid";
-import { Graph, Vertex } from "./Graph";
+import { VertexGrid } from "./EdgeVertexGrid";
+import { Graph, Node } from "./Graph";
 
 const inputFile = `${__dirname}/../../inputs/day-15.txt`;
 
@@ -41,24 +41,20 @@ const solve = () => {
     }
 
     // Build the grid
-    const edgeVertexGrid = new EdgeVertexGrid(input);
+    const vertexGrid = new VertexGrid(input);
 
     // Build the graph
     const graph = new Graph();
-    for (let y = 0; y < edgeVertexGrid.getSize(); y++) {
-        for (let x = 0; x < edgeVertexGrid.getSize(); x++) {
-            const edgeVertex = edgeVertexGrid.getVertex(x, y);
-            const adjacent = edgeVertexGrid.findChildren(x, y);
-            graph.addVertex(new Vertex(x, y, edgeVertex.weight, adjacent));
+    for (let y = 0; y < vertexGrid.getSize(); y++) {
+        for (let x = 0; x < vertexGrid.getSize(); x++) {
+            const edgeVertex = vertexGrid.getVertex(x, y);
+            const adjacentNodes = vertexGrid.findChildrenNodes(x, y);
+            graph.addNode(new Node(x, y, edgeVertex.weight, adjacentNodes))
         }
     }
 
-    graph.dijkstra();
-
-    const shortestPath = graph.getShortestPath("0,0", `${input.length - 1},${input.length - 1}`);
-    const score = shortestPath.reduceRight((p, c) => p + c.weight, 0) - edgeVertexGrid.getVertex(0,0).weight;
-    return score;
-
+    const path = graph.aStar("0,0", `${input.length - 1},${input.length - 1}`);
+    return path.reduce((p, c) => p + c.weight, 0) - path[path.length - 1].weight;
 }
 
 export default solve;

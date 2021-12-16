@@ -165,6 +165,6 @@ describe("Day15", () => {
         assert.strictEqual(day15_1(), 537);
     });
     it("Challenge 2", () => {
-        assert.strictEqual(day15_2(), "");
+        assert.strictEqual(day15_2(), 2881);
     });
 });

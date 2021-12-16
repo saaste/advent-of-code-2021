@@ -1,6 +1,6 @@
-import { EdgeVertex } from "./Graph";
+import { EdgeNode, EdgeVertex } from "./Graph";
 
-export class EdgeVertexGrid {
+export class VertexGrid {
     private grid: EdgeVertex[][] = [];
     private size: number;
 
@@ -22,35 +22,27 @@ export class EdgeVertexGrid {
         return this.grid[y][x];
     }
 
-    findChildren(x: number, y: number): EdgeVertex[] {
-        const neighbors: EdgeVertex[] = [];
+    findChildrenNodes(x: number, y: number): EdgeNode[] {
+        const neighbors: EdgeNode[] = [];
         
         // Left
         if (x > 0) {
-            const childNode = this.grid[y][x-1];
-            // if (!usedNodes.has(childNode.name))
-                neighbors.push();
+            neighbors.push(new EdgeNode(x - 1, y, this.grid[y][x - 1].weight));
         }
 
         // Top
         if (y > 0) {
-            const childNode = this.grid[y - 1][x];
-            // if (!usedNodes.has(childNode.name))
-                neighbors.push(childNode);
+            neighbors.push(new EdgeNode(x, y - 1, this.grid[y - 1][x].weight));
         }
 
         // Right
         if (x < this.grid[0].length - 1) {
-            const childNode = this.grid[y][x + 1];
-            // if (!usedNodes.has(childNode.name))
-                neighbors.push(childNode);
+            neighbors.push(new EdgeNode(x + 1, y, this.grid[y][x + 1].weight));
         }
 
         // Bottom
         if (y < this.grid.length - 1) {
-            const childNode = this.grid[y + 1][x];
-            // if (!usedNodes.has(childNode.name))
-                neighbors.push(childNode);
+            neighbors.push(new EdgeNode(x, y + 1, this.grid[y + 1][x].weight));
         }
 
         return neighbors;
