@@ -6,7 +6,7 @@ export interface DepthPoint {
 }
 
 export const getTop = (heightMap: number[][], x: number, y: number): DepthPoint => {
-    const point = { x, y: y - 1 }
+    const point = new Point2D(x, y - 1);
     if (y === 0) {
         return { point, depth: Infinity };
     }
@@ -14,7 +14,7 @@ export const getTop = (heightMap: number[][], x: number, y: number): DepthPoint 
 }
 
 export const getRight = (heightMap: number[][], x: number, y: number): DepthPoint => {
-    const point = { x: x + 1, y }
+    const point = new Point2D(x + 1, y)
     if (x === heightMap[0].length - 1) {
         return { point, depth: Infinity };
     }
@@ -22,7 +22,7 @@ export const getRight = (heightMap: number[][], x: number, y: number): DepthPoin
 }
 
 export const getBottom = (heightMap: number[][], x: number, y: number): DepthPoint => {
-    const point = { x, y: y + 1 }
+    const point = new Point2D(x, y + 1)
     if (y === heightMap.length - 1) {
         return { point, depth: Infinity };
     }
@@ -30,7 +30,7 @@ export const getBottom = (heightMap: number[][], x: number, y: number): DepthPoi
 }
 
 export const getLeft = (heightMap: number[][], x: number, y: number): DepthPoint => {
-    const point = { x: x - 1, y }
+    const point = new Point2D(x - 1, y)
     if (x === 0) {
         return { point, depth: Infinity };
     }
@@ -49,7 +49,7 @@ export const findLowPoints = (heightMap: number[][]): DepthPoint[] => {
             const bottom = getBottom(heightMap, x, y);
             const left = getLeft(heightMap, x, y);
             if (point < top.depth && point < right.depth && point < bottom.depth && point < left.depth) {
-                lowPoints.push({ point: {x, y}, depth: point });
+                lowPoints.push({ point: new Point2D(x, y), depth: point });
             }
         }
     }
