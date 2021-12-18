@@ -1,10 +1,10 @@
-import { EdgeVertexGrid } from "./EdgeVertexGrid";
+import { VertexGrid } from "./EdgeVertexGrid";
 import { Node } from "./Graph";
 
-export const printRoute = (path: Node[], edgeVertexGrid: EdgeVertexGrid) => {
+export const printRoute = (path: Node[], edgeVertexGrid: VertexGrid) => {
     // Print route
     const pathNames: Set<string> = new Set(path.map((n) => n.name))
-        for (let y = 0; y < edgeVertexGrid.getSize(); y++) {
+    for (let y = 0; y < edgeVertexGrid.getSize(); y++) {
         let row = "";
         for (let x = 0; x < edgeVertexGrid.getSize(); x++) {
             const vertex = edgeVertexGrid.getVertex(x, y);
