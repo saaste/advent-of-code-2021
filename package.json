@@ -7,17 +7,19 @@
     "debug": "npm run build && node --inspect build/index.js",
     "start:dev": "nodemon --inspect index.ts",
     "build": "rimraf ./build && tsc",
-    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'src/tests/**/*.ts'",
-    "test:watch": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'src/tests/**/*.ts' --watch --watch-files 'src/**/*.ts'",
-    "test:win": "node ./node_modules/mocha/bin/mocha -r ts-node/register 'src/tests/**/*.ts'",
-    "test:win:watch": "node ./node_modules/mocha/bin/mocha -r ts-node/register 'src/tests/**/*.ts' --watch --watch-files 'src/**/*.ts'"
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'src/**/*.spec.ts'",
+    "test:watch": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'src/**/*.spec.ts' --watch --watch-files 'src/**/*.ts'",
+    "test:win": "node ./node_modules/mocha/bin/mocha -r ts-node/register 'src/**/*.spec.ts'",
+    "test:win:watch": "node ./node_modules/mocha/bin/mocha -r ts-node/register 'src/**/*.spec.ts' --watch --watch-files 'src/**/*.ts'"
   },
   "dependencies": {
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.2",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.11.11",
+    "@types/uuid": "^8.3.3",
     "mocha": "^9.1.3",
     "nodemon": "^2.0.15",
     "rimraf": "^3.0.2",
