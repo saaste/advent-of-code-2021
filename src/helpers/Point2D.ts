@@ -2,6 +2,12 @@ export enum MirrorDirection {
     Horizontally = 1,
     Vertically = 2
 }
+
+export enum Axis {
+    X = 1,
+    Y = 2,
+    Z = 3
+}
 export class Point2D {
     x: number;
     y: number;
@@ -28,6 +34,17 @@ export class Point2D {
         }
     }
 
+    rotateCW() {
+        const radians = Math.PI / 2;
+        const cos = Math.cos(radians);
+        const sin = Math.sin(radians);
+        const oldX = this.x;
+        const oldY = this.y;
+            
+        this.x = Math.round(cos * oldX + sin * oldY)
+        this.y = Math.round(cos * oldY - sin * oldX);
+    }
+    
     toString(): string {
         return `${this.x},${this.y}`;
     }

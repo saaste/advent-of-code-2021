@@ -42,22 +42,13 @@ export class BeaconPlane {
 
     // Rotate plane 90 degreed clock-wise
     rotateCW() {
-        const radians = Math.PI / 2;
-        const cos = Math.cos(radians);
-        const sin = Math.sin(radians);
         const allBeacons = [...this._beacons.values()];
-
+        const newBeacons: Map<string, Point2D> = new Map();
         for (const probe of allBeacons) {
-            const oldKey = this.key(probe);
-            const oldX = probe.x;
-            const oldY = probe.y;
-            
-            probe.x = Math.round(cos * oldX + sin * oldY)
-            probe.y = Math.round(cos * oldY - sin * oldX);
-
-            this._beacons.delete(oldKey);
-            this._beacons.set(this.key(probe), probe);
+            probe.rotateCW();
+            newBeacons.set(this.key(probe), probe);
         }
+        this._beacons = newBeacons
     }
 
     move(velocity: Point2D): void {

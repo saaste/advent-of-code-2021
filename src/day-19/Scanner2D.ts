@@ -1,8 +1,9 @@
 import { MirrorDirection, Point2D } from "../helpers/Point2D";
 import { BeaconPlane } from "./BeaconPlane";
 import _ from "lodash"
+import { IScanner } from "./IScanner";
 
-export class Scanner2D {
+export class Scanner2D implements IScanner<Point2D> {
     private _name: string;
     private _plane: BeaconPlane;
     private _scannerPositions: Point2D[];
@@ -73,7 +74,7 @@ export class Scanner2D {
     private tryAlignAllRotations(scannerB: Scanner2D, requiredMatches: number): Scanner2D | null {
         let rotations = 4;
         
-        // Rotations
+        // Rotations 
         while(rotations > 0) {
             const aProbes = this._plane.beacons();
             const bProbes = scannerB._plane.beacons();
@@ -106,6 +107,9 @@ export class Scanner2D {
     }
 
     private rotateCW() {
+        for (const scanner of this._scannerPositions) {
+            scanner.rotateCW();
+        }
         this._plane.rotateCW();
     }
 
