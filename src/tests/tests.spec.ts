@@ -209,10 +209,10 @@ describe("Day tests", () => {
 
     describe("Day19", () => {
         it("Challenge 1", () => {
-            assert.strictEqual(day19_1(), "");
+            assert.strictEqual(day19_1(), 459);
         });
         it("Challenge 2", () => {
-            assert.strictEqual(day19_2(), "");
+            assert.strictEqual(day19_2(), 19130);
         });
     });
 
