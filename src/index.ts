@@ -32,9 +32,10 @@
 // import day16_2 from './day-16/challenge_2';
 // import day17_1 from './day-17/challenge_1';
 // import day17_2 from './day-17/challenge_2';
-import day18_1 from './day-18/challenge_1';
-import day18_2 from './day-18/challenge_2';
-
+// import day18_1 from './day-18/challenge_1';
+// import day18_2 from './day-18/challenge_2';
+import day19_1 from './day-19/challenge_1';
+import day19_2 from './day-19/challenge_2';
 
 // console.log(`Day 1 / Step 1: ${day1_1()} increases`);
 // console.log(`Day 1 / Step 2: ${day1_2()} increases`);
@@ -71,5 +72,7 @@ import day18_2 from './day-18/challenge_2';
 // console.log(`Day 16 / Step 2: ${day16_2()}`);
 // console.log(`Day 17 / Step 1: ${day17_1()}`);
 // console.log(`Day 17 / Step 2: ${day17_2()}`);
-console.log(`Day 18 / Step 1: ${day18_1()}`);
-console.log(`Day 18 / Step 2: ${day18_2()}`);
+// console.log(`Day 18 / Step 1: ${day18_1()}`);
+// console.log(`Day 18 / Step 2: ${day18_2()}`);
+console.log(`Day 19 / Step 1: ${day19_1()}`);
+console.log(`Day 19 / Step 2: ${day19_2()}`);
