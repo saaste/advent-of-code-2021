@@ -109,7 +109,7 @@ describe("Scanner3D", () => {
             expect(scanner0?.scannerPositions()[3]).to.deep.equal(new Point3D(1105,-1205,1229))
             expect(scanner0?.scannerPositions()[4]).to.deep.equal(new Point3D(-92,-2380,-20))
             expect(scanner0?.beaconCount()).to.equal(79);
-        }).timeout(2500);
+        }).timeout(10000);
 
         it("Handle provided example data in a loop", () => {
             const inputFile = `${__dirname}/test-data/1.txt`;
@@ -134,7 +134,7 @@ describe("Scanner3D", () => {
             
             expect(scanner0.scannerPositions().length).to.equal(5);
             expect(scanner0.beaconCount()).to.equal(79);
-        }).timeout(5500);
+        }).timeout(10000);
     })
 });
 
